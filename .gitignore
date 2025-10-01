@@ -100,3 +100,4 @@ vendor/
 # Local development
 *.local
 TODO.md
+.venv
