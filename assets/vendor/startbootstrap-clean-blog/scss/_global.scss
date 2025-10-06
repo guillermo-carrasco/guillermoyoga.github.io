@@ -36,6 +36,105 @@ blockquote {
     color: $gray-600;
 }
 
+.certifications {
+    display: grid;
+    gap: 1.5rem;
+    margin: 60px 0 40px;
+    padding: 30px;
+    border: 1px solid rgba($gray-600, 0.25);
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba($gray-100, 0.9), rgba($white, 0.9));
+    box-shadow: 0 20px 45px -30px rgba($gray-900, 0.4);
+
+    @include media-breakpoint-up(md) {
+        grid-template-columns: auto 1fr;
+        align-items: center;
+        gap: 2.5rem;
+    }
+
+    &__badge {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 0.35rem;
+        min-width: 120px;
+        padding: 1rem 1.25rem;
+        border-radius: 14px;
+        background-color: rgba($primary, 0.08);
+        color: $gray-900;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        font-weight: 600;
+        font-size: 0.75rem;
+    }
+
+    &__label {
+        opacity: 0.75;
+    }
+
+    &__years {
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: $primary;
+        letter-spacing: 0.05em;
+    }
+
+    &__content {
+        display: grid;
+        gap: 1rem;
+    }
+
+    &__title {
+        margin: 0;
+        font-size: 1.5rem;
+    }
+
+    &__list {
+        display: grid;
+        gap: 0.75rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    &__item {
+        display: grid;
+        gap: 0.35rem;
+        margin: 0;
+        padding: 0;
+        @include media-breakpoint-up(md) {
+            grid-template-columns: auto 1fr;
+            align-items: start;
+            gap: 1.25rem;
+        }
+    }
+
+    &__item-year {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: $gray-700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+    }
+
+    &__item-body {
+        display: grid;
+        gap: 0.2rem;
+    }
+
+    &__course {
+        font-size: 1.05rem;
+        font-weight: 600;
+        color: $gray-900;
+    }
+
+    &__details {
+        font-size: 0.95rem;
+        color: $gray-700;
+    }
+}
+
 .section-heading {
     font-size: 36px;
     font-weight: 700;

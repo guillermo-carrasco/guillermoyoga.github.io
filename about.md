@@ -17,6 +17,25 @@ In my classes you’ll flow and sweat, because I love heat and strength. That sa
 
 Yoga has become a life-changing practice for me, and I can’t wait to share what I’ve learned with you — and to learn from you as well, because we all have something to teach.
 
+<div class="certifications">
+<div class="certifications__badge">
+<span class="certifications__label">Formal yoga training</span>
+<span class="certifications__years">2025</span>
+</div>
+<div class="certifications__content">
+<h2 class="certifications__title">Credentials and courses</h2>
+<ul class="certifications__list">
+<li class="certifications__item">
+<span class="certifications__item-year">2025</span>
+<div class="certifications__item-body">
+<span class="certifications__course">200-hour Yoga Teacher Training</span>
+<span class="certifications__details"><a href="https://abhayayoga.com/"> Abhaya Yoga · Brooklyn</a></span>
+</div>
+</li>
+</ul>
+</div>
+</div>
+
 See you in class!
 
 — Guillermo
