@@ -13,7 +13,10 @@ Read more [about](about) me
 
 ## Where to find me? 
 
-I am currently not regularly teaching in a studio, but I'd love to! Let me know if you're open to hear about what I can
+I am currently teaching regularly as part of my full-time job fitness program at my office. Unfortunately this is on a 
+private setting so it is not open to the general public.
+
+I'd love to explore opportunities to teach in studios around the city! Let me know if you're open to hear about what I can
 offer, say hi@guillermoyoga.com
 
 [abhaya]: https://abhayayoga.com/schedule/
