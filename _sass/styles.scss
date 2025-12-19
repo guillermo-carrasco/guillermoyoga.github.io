@@ -31,11 +31,11 @@ $color-hero-end: #11161d;
   --radius-sm: 10px;
   --radius-md: 16px;
   --radius-lg: 26px;
-  --space-xs: clamp(0.5rem, 0.42rem + 0.4vw, 0.75rem);
-  --space-sm: clamp(0.9rem, 0.75rem + 0.6vw, 1.4rem);
-  --space-md: clamp(1.5rem, 1.25rem + 0.9vw, 2.25rem);
-  --space-lg: clamp(2.25rem, 1.8rem + 1.5vw, 3.2rem);
-  --space-xl: clamp(3.75rem, 3rem + 2.5vw, 5.5rem);
+  --space-xs: clamp(0.5rem, calc(0.42rem + 0.4vw), 0.75rem);
+  --space-sm: clamp(0.9rem, calc(0.75rem + 0.6vw), 1.4rem);
+  --space-md: clamp(1.5rem, calc(1.25rem + 0.9vw), 2.25rem);
+  --space-lg: clamp(2.25rem, calc(1.8rem + 1.5vw), 3.2rem);
+  --space-xl: clamp(3.75rem, calc(3rem + 2.5vw), 5.5rem);
   color-scheme: light;
 }
 
@@ -135,15 +135,15 @@ h5 {
 }
 
 h1 {
-  font-size: clamp(2.4rem, 1.9rem + 1.8vw, 3.2rem);
+  font-size: clamp(2.4rem, calc(1.9rem + 1.8vw), 3.2rem);
 }
 
 h2 {
-  font-size: clamp(1.85rem, 1.6rem + 1vw, 2.45rem);
+  font-size: clamp(1.85rem, calc(1.6rem + 1vw), 2.45rem);
 }
 
 h3 {
-  font-size: clamp(1.45rem, 1.3rem + 0.6vw, 1.8rem);
+  font-size: clamp(1.45rem, calc(1.3rem + 0.6vw), 1.8rem);
 }
 
 p {
@@ -209,7 +209,7 @@ blockquote {
 .site-nav__links {
   display: flex;
   align-items: center;
-  gap: clamp(0.75rem, 0.6rem + 0.6vw, 1.4rem);
+  gap: clamp(0.75rem, calc(0.6rem + 0.6vw), 1.4rem);
 }
 
 .site-nav__link {
@@ -227,7 +227,7 @@ blockquote {
 
 .page-hero {
   position: relative;
-  padding: clamp(6.5rem, 6rem + 1vw, 7.5rem) 0 clamp(4.5rem, 4rem + 1.2vw, 5.5rem);
+  padding: clamp(6.5rem, calc(6rem + 1vw), 7.5rem) 0 clamp(4.5rem, calc(4rem + 1.2vw), 5.5rem);
   color: #f8fafc;
   background: linear-gradient(135deg, var(--color-hero-start), var(--color-hero-end));
   overflow: hidden;
@@ -279,13 +279,13 @@ blockquote {
 
 .page-hero__title {
   margin: 0 0 var(--space-xs);
-  font-size: clamp(2.7rem, 2.3rem + 1.2vw, 3.4rem);
+  font-size: clamp(2.7rem, calc(2.3rem + 1.2vw), 3.4rem);
   color: #ffffff;
   text-shadow: 0 18px 40px rgba(15, 23, 42, 0.55);
 }
 
 .page-hero__subtitle {
-  font-size: clamp(1.05rem, 0.97rem + 0.5vw, 1.35rem);
+  font-size: clamp(1.05rem, calc(0.97rem + 0.5vw), 1.35rem);
   max-width: 45ch;
   margin: 0;
   color: #f7fafc;
@@ -385,7 +385,7 @@ blockquote {
 }
 
 .home-intro__lead {
-  font-size: clamp(1.1rem, 1rem + 0.5vw, 1.35rem);
+  font-size: clamp(1.1rem, calc(1rem + 0.5vw), 1.35rem);
   max-width: 58ch;
 }
 
@@ -749,7 +749,7 @@ table tbody tr:hover {
   }
 
   .page-hero {
-    padding-top: clamp(5.5rem, 5rem + 1vw, 6.5rem);
+    padding-top: clamp(5.5rem, calc(5rem + 1vw), 6.5rem);
   }
 
   .page-hero__subtitle {
