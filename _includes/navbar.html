@@ -3,7 +3,11 @@
 <nav class="site-nav">
   <div class="site-nav__inner">
     <a class="site-nav__brand" href="{{ '/' | relative_url }}">{{ site.title | escape }}</a>
-    <div class="site-nav__links">
+    <button class="site-nav__toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" data-nav-toggle>
+      <span class="site-nav__toggle-icon" aria-hidden="true"></span>
+      <span class="sr-only">Menu</span>
+    </button>
+    <div class="site-nav__links" id="primary-navigation" data-nav-menu>
       <a class="site-nav__link" href="{{ '/' | relative_url }}" {% if current_path == '/' %}aria-current="page"{% endif %}>Home</a>
       <a class="site-nav__link" href="{{ '/about' | relative_url }}" {% if current_path contains '/about' %}aria-current="page"{% endif %}>About</a>
       <a class="site-nav__link" href="{{ '/posts' | relative_url }}" {% if current_path contains '/posts' %}aria-current="page"{% endif %}>Posts</a>

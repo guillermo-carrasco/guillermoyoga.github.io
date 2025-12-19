@@ -1,4 +1,39 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const navToggle = document.querySelector("[data-nav-toggle]");
+  const navMenu = document.querySelector("[data-nav-menu]");
+
+  if (navToggle && navMenu) {
+    const setNavState = (isOpen) => {
+      navMenu.classList.toggle("site-nav__links--open", isOpen);
+      navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    };
+
+    navToggle.addEventListener("click", () => {
+      const willOpen = !navMenu.classList.contains("site-nav__links--open");
+      setNavState(willOpen);
+    });
+
+    navMenu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => setNavState(false));
+    });
+
+    document.addEventListener("keyup", (event) => {
+      if (event.key === "Escape") {
+        setNavState(false);
+      }
+    });
+
+    document.addEventListener("click", (event) => {
+      if (!navMenu.classList.contains("site-nav__links--open")) return;
+      if (
+        !navMenu.contains(event.target) &&
+        !navToggle.contains(event.target)
+      ) {
+        setNavState(false);
+      }
+    });
+  }
+
   const form = document.querySelector("#contactForm");
   if (!form) return;
 
