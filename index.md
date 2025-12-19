@@ -3,21 +3,41 @@ layout: page
 title: Guillermo Carrasco
 description: Remember to breathe.
 background: '/img/bg-home.jpg'
+eyebrow: Grounded vinyasa in NYC
 ---
 
-Hi, I’m Guillermo — a yoga teacher trained at Abhaya Yoga in NYC. My classes are strong, playful, and welcoming to all levels. 
+<div class="home-intro">
+  <p class="home-intro__lead">
+    Hi, I'm Guillermo -- a yoga teacher trained at Abhaya Yoga in Brooklyn. I build strong, playful classes that welcome every body and every level.
+  </p>
+  <p>
+    Expect thoughtful sequencing, clear alignment cues, and space to explore your own expression on the mat. My goal is to balance heat and softness so you leave feeling present, grounded, and energized.
+  </p>
+  <a class="button button--outline" href="{{ '/about' | relative_url }}">About me</a>
+</div>
 
-Expect to move, sweat, and explore your own expression on the mat in a safe, supportive space.
+<section class="home-highlights">
+  <h2>What to expect in class</h2>
+  <div class="home-highlights__grid">
+    <article class="home-highlights__card">
+      <h3>Playful sequencing</h3>
+      <p>Creative flows, intentional transitions, and moments of stillness to reconnect with breath.</p>
+    </article>
+    <article class="home-highlights__card">
+      <h3>Functional movement</h3>
+      <p>Carefully layered cues that honor anatomy, support mobility, and build strength safely.</p>
+    </article>
+    <article class="home-highlights__card">
+      <h3>Inclusive energy</h3>
+      <p>Options and variations so practitioners can show up exactly as they are and feel held.</p>
+    </article>
+  </div>
+</section>
 
-Read more [about](about) me
-
-## Where to find me? 
-
-I am currently teaching regularly as part of my full-time job fitness program at my office. Unfortunately this is on a 
-private setting so it is not open to the general public.
-
-I'd love to explore opportunities to teach in studios around the city! Let me know if you're open to hear about what I can
-offer, say hi@guillermoyoga.com
-
-[abhaya]: https://abhayayoga.com/schedule/
-[bbp]: https://maps.app.goo.gl/Etvd3o2Ms5zh1wKEA
+<section class="home-cta">
+  <h2>Let's bring yoga to your community</h2>
+  <p>
+    I currently lead private corporate classes and am opening space for studio residencies, subbing, and pop-up collaborations in NYC. I'd love to hear what you're building.
+  </p>
+  <a class="button button--primary" href="mailto:{{ site.email | escape }}">Say hi@guillermoyoga.com</a>
+</section>

@@ -39,7 +39,6 @@ shell: ## Open a shell in the Jekyll container
 install: ## Install dependencies in the container
 	@echo "📦 Installing dependencies..."
 	@docker-compose run --rm $(SERVICE_NAME) bundle install
-	@docker-compose run --rm $(SERVICE_NAME) npm install
 
 serve-detached: ## Start the server in detached mode (background)
 	@echo "🚀 Starting Jekyll development server in background..."

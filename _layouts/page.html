@@ -2,33 +2,21 @@
 layout: default
 ---
 
-<!-- Page Header -->
+{% assign hero_classes = "page-hero" %}
 {% if page.background %}
-<header class="masthead" style="background-image: url('{{ page.background | prepend: site.baseurl | replace: '//', '/' }}')">
-  {% else %}
-  <header class="masthead">
+  {% assign hero_classes = hero_classes | append: " page-hero--has-image" %}
+{% endif %}
+
+<header class="{{ hero_classes }}" {% if page.background %}style="--hero-image: url('{{ page.background | prepend: site.baseurl | replace: '//', '/' }}')"{% endif %}>
+  <div class="page-hero__inner">
+    <span class="page-hero__eyebrow">{{ page.eyebrow | default: site.title }}</span>
+    <h1 class="page-hero__title">{{ page.title }}</h1>
+    {% if page.description %}
+      <p class="page-hero__subtitle">{{ page.description }}</p>
     {% endif %}
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-          <div class="page-heading">
-            <h1>{{ page.title }}</h1>
-            {% if page.description %}
-            <span class="subheading">{{ page.description }}</span>
-            {% endif %}
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
-
-        {{ content }}
-
-      </div>
-    </div>
   </div>
+</header>
+
+<section class="page-content">
+  {{ content }}
+</section>

@@ -1,6 +1,6 @@
 title:              Guillermo Carrasco
 email:              hi@guillermoyoga.com
-description:        Yoga Teacher, NYC
+description:        Grounded vinyasa in NYC
 author:             Guillermo Carrasco
 baseurl:            ""
 url:                "https://guillermoyoga.com"
@@ -13,7 +13,7 @@ instagram_username: guillermoyoga
 linkedin_username:
 
 # Add your google-analytics ID here to activate google analytics
-google_analytics:   UA-XXXXXXXXX-X # out your google-analytics code
+google_analytics:
 
 # Build settings
 markdown:           kramdown

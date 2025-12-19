@@ -1,26 +1,20 @@
 # Use the official Ruby image as base
 FROM ruby:3.1-alpine
 
-# Install dependencies for Jekyll and Node.js
+# Install dependencies for Jekyll
 RUN apk add --no-cache \
     build-base \
     git \
-    nodejs \
-    npm \
     tzdata
 
 # Set working directory
 WORKDIR /app
 
-# Copy Gemfile and package.json for dependency installation
+# Copy Gemfile for dependency installation
 COPY Gemfile Gemfile.lock* ./
-COPY package*.json ./
 
 # Install Ruby gems
 RUN bundle install
-
-# Install Node.js dependencies
-RUN npm install
 
 # Copy the rest of the application
 COPY . .

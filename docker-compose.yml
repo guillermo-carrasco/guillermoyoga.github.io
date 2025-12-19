@@ -6,19 +6,7 @@ services:
       - "35729:35729" # LiveReload
     volumes:
       - .:/app
-      - /app/node_modules
       - /app/.bundle
     environment:
       - JEKYLL_ENV=development
     command: bundle exec jekyll serve --host 0.0.0.0 --livereload --force_polling
-    
-  # Optional: Add a service for npm commands
-  npm:
-    build: .
-    volumes:
-      - .:/app
-      - /app/node_modules
-    working_dir: /app
-    command: npm run watch
-    profiles:
-      - npm
