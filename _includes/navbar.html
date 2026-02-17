@@ -10,6 +10,7 @@
     <div class="site-nav__links" id="primary-navigation" data-nav-menu>
       <a class="site-nav__link" href="{{ '/' | relative_url }}" {% if current_path == '/' %}aria-current="page"{% endif %}>Home</a>
       <a class="site-nav__link" href="{{ '/about' | relative_url }}" {% if current_path contains '/about' %}aria-current="page"{% endif %}>About</a>
+      <a class="site-nav__link" href="{{ '/classes' | relative_url }}" {% if current_path contains '/classes' %}aria-current="page"{% endif %}>Classes</a>
       <a class="site-nav__link" href="{{ '/posts' | relative_url }}" {% if current_path contains '/posts' %}aria-current="page"{% endif %}>Posts</a>
       <a class="site-nav__link" href="{{ '/contact' | relative_url }}" {% if current_path contains '/contact' %}aria-current="page"{% endif %}>Contact</a>
     </div>

@@ -15,6 +15,11 @@ linkedin_username:
 # Add your google-analytics ID here to activate google analytics
 google_analytics: G-JQ245P0VLM
 
+# Collections
+collections:
+  classes:
+    output: false
+
 # Build settings
 markdown:           kramdown
 paginate:           5
