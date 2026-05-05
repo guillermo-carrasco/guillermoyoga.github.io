@@ -9,6 +9,7 @@
   --color-muted: #5c6671;
   --color-accent: #d97745;
   --color-accent-dark: #c26437;
+  --color-link: #a04e26;
   --color-border: #ebded3;
   --color-hero-start: #1f2733;
   --color-hero-end: #11161d;
@@ -34,6 +35,7 @@
 html {
   font-size: 16px;
   scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
 }
 
 body {
@@ -87,6 +89,19 @@ a:focus {
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 0.25em;
+}
+
+.page-content a:not([class]) {
+  color: var(--color-link);
+  text-decoration: underline;
+  text-decoration-color: rgba(160, 78, 38, 0.4);
+  text-underline-offset: 0.2em;
+}
+
+.page-content a:not([class]):hover,
+.page-content a:not([class]):focus {
+  color: var(--color-accent-dark);
+  text-decoration-color: currentColor;
 }
 
 strong {
@@ -609,10 +624,6 @@ blockquote {
 
 .certifications__course {
   font-weight: 600;
-}
-
-.certifications__details a {
-  color: var(--color-accent);
 }
 
 .contact-intro {

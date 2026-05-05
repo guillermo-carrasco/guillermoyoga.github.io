@@ -11,7 +11,7 @@ eyebrow: Practice journal
   <ul class="posts-list">
     {% for post in paginator.posts %}
       <li class="post-card">
-        <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
+        <a class="post-card__link" href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
           <h2 class="post-card__title">{{ post.title }}</h2>
         </a>
         {% assign subtitle = post.subtitle | default: "" | strip %}
