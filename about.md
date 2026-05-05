@@ -1,7 +1,7 @@
 ---
 layout: page
 title: About Me
-description: This is what I do.
+description: Teaching, training, and the practice that shaped me
 background: '/img/bg-about.jpg'
 eyebrow: About Guillermo
 ---
