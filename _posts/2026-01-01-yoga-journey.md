@@ -1,9 +1,8 @@
 ---
 layout: post
 title: "My yoga journey, so far"
-subtitle: ""
 date: 2026-01-01
-background: '/img/posts/yoga_journey.png'
+background: '/img/posts/yoga_journey.jpg'
 ---
 
 I’ve been doing yoga for about 6 years now. It all started as mere curiosity – I am a very active person, and I was looking for a way to stretch my body in a structured and safe way.

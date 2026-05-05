@@ -36,8 +36,6 @@ yarn-error.log*
 *.swp
 *.swo
 *~
-.DS_Store
-Thumbs.db
 
 # Operating System
 .DS_Store
@@ -80,10 +78,6 @@ yarn.lock
 
 # Local configuration
 _config_local.yml
-
-# GitHub Pages
-.github/
-!.github/workflows/
 
 # Ruby version managers
 .ruby-version

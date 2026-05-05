@@ -6,19 +6,10 @@ baseurl:            ""
 url:                "https://guillermoyoga.com"
 
 # Social Profiles
-twitter_username:   
-github_username:    
-facebook_username:  
 instagram_username: guillermoyoga
-linkedin_username:
 
 # Add your google-analytics ID here to activate google analytics
 google_analytics: G-JQ245P0VLM
-
-# Collections
-collections:
-  classes:
-    output: false
 
 # Build settings
 markdown:           kramdown
@@ -27,4 +18,18 @@ paginate_path:      "/posts/page:num/"
 plugins:
   - jekyll-feed
   - jekyll-paginate
-  - jekyll-sitemap ## Uncomment this line to silently generate a sitemaps.org compliant sitemap for your Jekyll site
+  - jekyll-sitemap
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .bundle
+  - .venv
+  - .vscode
+  - Makefile
+  - Dockerfile
+  - docker-compose.yml
+  - README.md
+  - CLAUDE.md
+  - TODO.md

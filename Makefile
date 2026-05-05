@@ -1,6 +1,6 @@
 # Makefile for Jekyll site with Docker
 
-.PHONY: help serve build stop clean logs shell install
+.PHONY: help serve build stop clean logs shell
 
 # Default target
 .DEFAULT_GOAL := help
@@ -35,10 +35,6 @@ logs: ## Show logs from the Jekyll container
 shell: ## Open a shell in the Jekyll container
 	@echo "🐚 Opening shell in Jekyll container..."
 	@docker-compose run --rm $(SERVICE_NAME) /bin/sh
-
-install: ## Install dependencies in the container
-	@echo "📦 Installing dependencies..."
-	@docker-compose run --rm $(SERVICE_NAME) bundle install
 
 serve-detached: ## Start the server in detached mode (background)
 	@echo "🚀 Starting Jekyll development server in background..."

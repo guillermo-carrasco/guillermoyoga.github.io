@@ -14,9 +14,10 @@ eyebrow: Practice journal
         <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
           <h2 class="post-card__title">{{ post.title }}</h2>
         </a>
+        {% assign subtitle = post.subtitle | default: "" | strip %}
         <p class="post-card__excerpt">
-          {% if post.subtitle %}
-            {{ post.subtitle }}
+          {% if subtitle != "" %}
+            {{ subtitle }}
           {% else %}
             {{ post.excerpt | strip_html | truncatewords: 24 }}
           {% endif %}
