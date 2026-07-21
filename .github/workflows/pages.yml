@@ -36,6 +36,9 @@ jobs:
           JEKYLL_ENV: production
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}" --trace
 
+      - name: Validate compiled stylesheet
+        run: ruby -e 'css = File.read("_site/assets/main.css"); abort "Stylesheet was not compiled" unless css.bytesize > 1000 && css.include?(".site-nav")'
+
       - name: Validate JavaScript syntax
         run: node --check assets/scripts.js
 

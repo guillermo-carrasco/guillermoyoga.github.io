@@ -21,6 +21,7 @@ site: ## Build the production site locally
 	@bundle exec jekyll build
 
 check: site ## Validate generated HTML and internal links
+	@ruby -e 'css = File.read("_site/assets/main.css"); abort "Stylesheet was not compiled" unless css.bytesize > 1000 && css.include?(".site-nav")'
 	@node --check assets/scripts.js
 	@bundle exec htmlproofer ./_site --disable-external
 
