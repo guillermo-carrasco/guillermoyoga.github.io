@@ -14,11 +14,11 @@ It was autumn 2019. I went to my gym in Stockholm, Sweden, where I was living at
 
 She smiled and said, “I’m glad you came. Just follow along, and if there is anything you don’t want to do, don’t do it.”
 
-That shocked me. I was used to rigid gym classes like spinning, BodyPump, or HIIT workouts, where you are not only encouraged but almost forced to follow along and push your body through exhaustion. In those classes, not being able to do an exercise can feel like failure. That openness—that invitation to surrender—unsettled me in the best possible way.
+That shocked me. I was used to rigid gym classes like spinning, BodyPump, or HIIT workouts, where you are not only encouraged but almost forced to follow along and push your body through exhaustion. In those classes, not being able to do an exercise can feel like failure. That openness and invitation to surrender unsettled me in the best possible way.
 
 I remember very little of what we did in that class, but I do remember how I felt afterward. Physically, it was exactly what I was looking for: my muscles felt relaxed and stretched, and I had moved in ways that felt natural and strange at the same time. I think I was moving the way my body was meant to move, but our modern lifestyle had made those patterns feel foreign.
 
-The more interesting—or at least more unexpected—part was how I felt mentally. I felt calm. I felt at ease, and I left the class with a smile.
+What surprised me more was how I felt mentally. I felt calm. I felt at ease, and I left the class with a smile.
 
 I continued going to the same class for a couple of weeks, and then COVID happened. The gym closed, like everything else, and I felt the universe had taken away something I had only just discovered. Like everyone else, I tried YouTube videos and online classes. They filled the void and kept me learning, but it was not the same. **There’s something special about going to a studio** with other people and a teacher moving through the room, giving cues and occasionally assisting students. It feels more like a _community_.
 
