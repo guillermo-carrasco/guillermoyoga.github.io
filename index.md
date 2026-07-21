@@ -3,17 +3,18 @@ layout: page
 title: Guillermo Carrasco
 description: Remember to breathe.
 background: '/img/bg-home.jpg'
+image: '/img/bg-home.jpg'
 eyebrow: Grounded vinyasa in NYC
 ---
 
 <div class="home-intro">
   <p class="home-intro__lead">
-    Hi, I'm Guillermo -- a yoga teacher trained at Abhaya Yoga in Brooklyn. I build strong, playful classes that welcome every body and every level.
+    Hi, I'm Guillermo—a yoga teacher trained at Abhaya Yoga in Brooklyn. I build strong, playful classes that welcome every body and every level.
   </p>
   <p>
     Expect thoughtful sequencing, clear alignment cues, and space to explore your own expression on the mat. My goal is to balance heat and softness so you leave feeling present, grounded, and energized.
   </p>
-  <a class="button button--outline" href="{{ '/about' | relative_url }}">About me</a>
+  <a class="button button--outline" href="{% link about.md %}">About me</a>
 </div>
 
 <section class="home-highlights">

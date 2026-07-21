@@ -5,14 +5,15 @@ layout: default
 {% assign hero_classes = "page-hero" %}
 {% if page.background %}
   {% assign hero_classes = hero_classes | append: " page-hero--has-image" %}
+  {% assign hero_avif = page.background | replace: '.jpg', '.avif' %}
 {% endif %}
 
-<header class="{{ hero_classes }}" {% if page.background %}style="--hero-image: url('{{ page.background | prepend: site.baseurl | replace: '//', '/' }}')"{% endif %}>
+<header class="{{ hero_classes }}" {% if page.background %}style="--hero-image-fallback: url('{{ page.background | relative_url }}'); --hero-image-modern: image-set(url('{{ hero_avif | relative_url }}') type('image/avif'), url('{{ page.background | relative_url }}') type('image/jpeg'));"{% endif %}>
   <div class="page-hero__inner">
-    <span class="page-hero__eyebrow">{{ page.eyebrow | default: site.title }}</span>
-    <h1 class="page-hero__title">{{ page.title }}</h1>
+    <span class="page-hero__eyebrow">{{ page.eyebrow | default: site.title | escape }}</span>
+    <h1 class="page-hero__title">{{ page.title | escape }}</h1>
     {% if page.description %}
-      <p class="page-hero__subtitle">{{ page.description }}</p>
+      <p class="page-hero__subtitle">{{ page.description | escape }}</p>
     {% endif %}
   </div>
 </header>

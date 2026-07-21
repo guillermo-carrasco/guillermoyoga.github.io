@@ -1,42 +1,45 @@
 ---
 layout: page
 title: Posts
+description: Stories, practice notes, and reflections from life on and off the mat
 background: '/img/bg-post.jpg'
+image: '/img/bg-post.jpg'
 eyebrow: Practice journal
 ---
 
-<p>Stories, practice notes, and playlists coming soon. Stay tuned!</p>
-
 {% if paginator and paginator.posts.size > 0 %}
+  <p>Stories, practice notes, and reflections from life on and off the mat.</p>
   <ul class="posts-list">
     {% for post in paginator.posts %}
       <li class="post-card">
-        <a class="post-card__link" href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
-          <h2 class="post-card__title">{{ post.title }}</h2>
+        <a class="post-card__link" href="{{ post.url | relative_url }}">
+          <h2 class="post-card__title">{{ post.title | escape }}</h2>
         </a>
         {% assign subtitle = post.subtitle | default: "" | strip %}
         <p class="post-card__excerpt">
           {% if subtitle != "" %}
-            {{ subtitle }}
+            {{ subtitle | escape }}
           {% else %}
             {{ post.excerpt | strip_html | truncatewords: 24 }}
           {% endif %}
         </p>
         <p class="post-card__meta">
-          {{ post.date | date: '%B %d, %Y' }} · {% include read_time.html content=post.content %}
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%B %-d, %Y' }}</time> · {% include read_time.html content=post.content %}
         </p>
       </li>
     {% endfor %}
   </ul>
 
   {% if paginator.total_pages > 1 %}
-    <nav class="pagination">
+    <nav class="pagination" aria-label="Journal pages">
       {% if paginator.previous_page %}
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer posts</a>
+        <a href="{{ paginator.previous_page_path | relative_url }}">&larr; Newer posts</a>
       {% endif %}
       {% if paginator.next_page %}
-        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older posts &rarr;</a>
+        <a href="{{ paginator.next_page_path | relative_url }}">Older posts &rarr;</a>
       {% endif %}
     </nav>
   {% endif %}
+{% else %}
+  <p>Stories, practice notes, and reflections are coming soon.</p>
 {% endif %}

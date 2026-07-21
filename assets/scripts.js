@@ -8,18 +8,28 @@ document.addEventListener("DOMContentLoaded", () => {
       navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
     };
 
+    const closeNav = (restoreFocus = false) => {
+      const wasOpen = navMenu.classList.contains("site-nav__links--open");
+      setNavState(false);
+      if (wasOpen && restoreFocus) navToggle.focus();
+    };
+
     navToggle.addEventListener("click", () => {
       const willOpen = !navMenu.classList.contains("site-nav__links--open");
       setNavState(willOpen);
     });
 
     navMenu.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => setNavState(false));
+      link.addEventListener("click", () => closeNav());
     });
 
-    document.addEventListener("keyup", (event) => {
-      if (event.key === "Escape") {
-        setNavState(false);
+    document.addEventListener("keydown", (event) => {
+      if (
+        event.key === "Escape" &&
+        navMenu.classList.contains("site-nav__links--open")
+      ) {
+        event.preventDefault();
+        closeNav(true);
       }
     });
 
@@ -29,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
         !navMenu.contains(event.target) &&
         !navToggle.contains(event.target)
       ) {
-        setNavState(false);
+        closeNav();
       }
     });
   }
@@ -38,6 +48,9 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!form) return;
 
   const status = form.querySelector(".form-status");
+  const submitButton = form.querySelector('button[type="submit"]');
+  let isSubmitting = false;
+
   const setStatus = (state, message) => {
     if (!status) return;
     status.dataset.state = state;
@@ -50,12 +63,20 @@ document.addEventListener("DOMContentLoaded", () => {
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
 
+    if (isSubmitting) return;
+
     if (!form.checkValidity()) {
       form.reportValidity();
       return;
     }
 
+    isSubmitting = true;
+    form.setAttribute("aria-busy", "true");
+    if (submitButton) submitButton.disabled = true;
     setStatus("pending", "Sending your message...");
+
+    const controller = new AbortController();
+    const timeoutId = window.setTimeout(() => controller.abort(), 15000);
 
     try {
       const formData = new FormData(form);
@@ -63,6 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
         method: "POST",
         headers: { Accept: "application/json" },
         body: formData,
+        signal: controller.signal,
       });
 
       if (!response.ok) {
@@ -72,10 +94,19 @@ document.addEventListener("DOMContentLoaded", () => {
       form.reset();
       setStatus("success", "Thank you! I'll be in touch shortly.");
     } catch (error) {
+      const message =
+        error.name === "AbortError"
+          ? "Sending took too long. Please try again or email me at hi@guillermoyoga.com."
+          : "Something went wrong. Please try again or email me at hi@guillermoyoga.com.";
       setStatus(
         "error",
-        "Something went wrong. Please try again or email me at hi@guillermoyoga.com."
+        message
       );
+    } finally {
+      window.clearTimeout(timeoutId);
+      isSubmitting = false;
+      form.removeAttribute("aria-busy");
+      if (submitButton) submitButton.disabled = false;
     }
   });
 });

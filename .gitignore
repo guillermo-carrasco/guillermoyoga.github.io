@@ -27,9 +27,6 @@ yarn-debug.log*
 yarn-error.log*
 .npm
 
-# Docker
-.dockerignore
-
 # IDE and Editor files
 .vscode/
 .idea/
@@ -80,7 +77,6 @@ yarn.lock
 _config_local.yml
 
 # Ruby version managers
-.ruby-version
 .rbenv-version
 .rvmrc
 

@@ -5,18 +5,19 @@ layout: default
 {% assign hero_classes = "page-hero" %}
 {% if page.background %}
   {% assign hero_classes = hero_classes | append: " page-hero--has-image" %}
+  {% assign hero_avif = page.background | replace: '.jpg', '.avif' %}
 {% endif %}
 
-<header class="{{ hero_classes }}" {% if page.background %}style="--hero-image: url('{{ page.background | prepend: site.baseurl | replace: '//', '/' }}')"{% endif %}>
+<header class="{{ hero_classes }}" {% if page.background %}style="--hero-image-fallback: url('{{ page.background | relative_url }}'); --hero-image-modern: image-set(url('{{ hero_avif | relative_url }}') type('image/avif'), url('{{ page.background | relative_url }}') type('image/jpeg'));"{% endif %}>
   <div class="page-hero__inner">
-    <span class="page-hero__eyebrow">{{ page.eyebrow | default: "Journal" }}</span>
-    <h1 class="page-hero__title">{{ page.title }}</h1>
+    <span class="page-hero__eyebrow">{{ page.eyebrow | default: "Journal" | escape }}</span>
+    <h1 class="page-hero__title">{{ page.title | escape }}</h1>
     {% assign subtitle = page.subtitle | default: "" | strip %}
     {% if subtitle != "" %}
-      <p class="page-hero__subtitle">{{ subtitle }}</p>
+      <p class="page-hero__subtitle">{{ subtitle | escape }}</p>
     {% endif %}
     <p class="post-meta">
-      {{ page.date | date: '%B %d, %Y' }} · {% include read_time.html content=page.content %}
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%B %-d, %Y' }}</time> · {% include read_time.html content=page.content %}
     </p>
   </div>
 </header>
@@ -28,12 +29,12 @@ layout: default
 
   <hr>
 
-  <nav class="post-pagination">
+  <nav class="post-pagination" aria-label="More journal entries">
     {% if page.previous.url %}
-      <a class="button button--outline" href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}">&larr; {{ page.previous.title }}</a>
+      <a class="button button--outline" href="{{ page.previous.url | relative_url }}">&larr; {{ page.previous.title | escape }}</a>
     {% endif %}
     {% if page.next.url %}
-      <a class="button button--outline" href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}">{{ page.next.title }} &rarr;</a>
+      <a class="button button--outline" href="{{ page.next.url | relative_url }}">{{ page.next.title | escape }} &rarr;</a>
     {% endif %}
   </nav>
 </section>

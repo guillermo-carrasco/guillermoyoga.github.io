@@ -1,47 +1,54 @@
 # guillermoyoga.com
 
-Personal site for Guillermo Carrasco -- yoga teacher based in NYC. Built with a lean Jekyll setup and custom styles (no external CSS frameworks or JavaScript dependencies).
+Personal site for Guillermo Carrasco, a yoga teacher based in NYC. It uses Jekyll 4, modern Sass, and a small amount of dependency-free JavaScript.
 
-## Tech stack
+## Requirements
 
-- [Jekyll 4](https://jekyllrb.com/) for static site generation
-- Sass for styling (`assets/main.scss`)
-- A sprinkle of vanilla JavaScript for the contact form
+- Ruby 3.4.10 (see `.ruby-version`)
+- Bundler
+- Docker Desktop, if using the container workflow
 
 ## Local development
 
-### Using Docker (recommended)
+Using the local Ruby toolchain:
 
 ```bash
-docker-compose up          # start dev server with live reload
-docker-compose down        # stop the container
-```
-
-Visit `http://localhost:4000` once the container is running.
-
-### Using local Ruby
-
-```bash
-bundle install
+make install
+make site
 bundle exec jekyll serve --livereload
 ```
 
-## Content structure
+Using Docker:
 
-- `index.md`, `about.md`, `contact.html`, `posts/index.html` – core pages
-- `_posts/` – add Markdown posts here (use the `post` layout)
-- `_layouts/` & `_includes/` – shared templates (hero, nav, footer, etc.)
-- `_sass/styles.scss` – global design tokens and component styles
-- `assets/scripts.js` – form submission helper (Formspree)
+```bash
+make serve
+```
+
+The site is available at `http://localhost:4000`; LiveReload uses port `35729`.
+
+## Validation
+
+```bash
+make check
+```
+
+This builds the production site and validates generated HTML and internal links with HTMLProofer. The same checks run on pull requests and before deployment.
+
+## Content
+
+- Core pages live in `index.md`, `about.md`, `contact.html`, and `posts/index.html`.
+- Journal entries live in `_posts/` and use the `post` layout.
+- Shared templates live in `_layouts/` and `_includes/`.
+- Global styles live in `_sass/styles.scss`; `assets/main.scss` is the Jekyll entry point.
+- Hero images live in `img/`. Keep matching `.jpg` and `.avif` files because templates preload AVIF and retain JPEG as a fallback.
 
 ## Deployment
 
-- Hosted via GitHub Pages with the custom domain `guillermoyoga.com`
-- `CNAME` is committed; ensure DNS records point to GitHub Pages IPs
+Pushes to `main` are built and deployed by `.github/workflows/pages.yml`. Pull requests run the same build and HTML validation without deploying. The repository's Pages source must be set to **GitHub Actions**.
 
-## Customizing
+The custom domain is configured in `CNAME` and in the repository's Pages settings.
 
-- Update global metadata inside `_config.yml`
-- Swap hero images in the `img/` folder and reference them via front matter
-- Adjust colors/typography by editing the variables at the top of `_sass/styles.scss`
-- The contact form posts to Formspree (`https://formspree.io/f/xgvlvgdd`). Replace the endpoint if needed.
+## Services
+
+- The contact form posts to Formspree. Its endpoint is configured in `contact.html`.
+- Google Analytics is enabled only in production. Its measurement ID is configured in `_config.yml`.

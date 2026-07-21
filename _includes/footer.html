@@ -3,7 +3,7 @@
     <p class="site-footer__title">Let's stay in touch</p>
     <ul class="site-footer__links">
       {% if site.email %}
-      <li><a href="mailto:{{ site.email | encode_email }}">Email</a></li>
+      <li><a href="mailto:{{ site.email | escape }}">Email</a></li>
       {% endif %}
       {% if site.instagram_username %}
       <li><a href="https://instagram.com/{{ site.instagram_username }}" rel="noreferrer noopener">Instagram</a></li>

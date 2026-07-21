@@ -1,16 +1,17 @@
 ---
 layout: page
 title: Contact Me
-description: Say hi! Or whatever :) 
+description: Get in touch about private classes, studio teaching, or collaborations in NYC
 background: '/img/bg-contact.jpg'
+image: '/img/bg-contact.jpg'
 eyebrow: Work together
 ---
 
 <p class="contact-intro">
-  Want to get in touch? Drop a note below and I'll respond as soon as I can. You can also email me directly at <a href="mailto:{{ site.email | encode_email }}">{{ site.email }}</a>.
+  Want to get in touch? Drop a note below and I'll respond as soon as I can. You can also email me directly at <a href="mailto:{{ site.email | escape }}">{{ site.email }}</a>.
 </p>
 
-<form id="contactForm" class="contact-form" action="https://formspree.io/f/xgvlvgdd" method="POST" novalidate>
+<form id="contactForm" class="contact-form" action="https://formspree.io/f/xgvlvgdd" method="POST">
   <div class="form-field">
     <label for="name">Name</label>
     <input type="text" id="name" name="name" required autocomplete="name">
@@ -25,6 +26,6 @@ eyebrow: Work together
   </div>
   <div class="form-actions">
     <button type="submit" class="button button--primary">Send message</button>
-    <p class="form-status" data-state="idle" aria-live="polite"></p>
+    <p class="form-status" data-state="idle" aria-live="polite" aria-atomic="true"></p>
   </div>
 </form>
